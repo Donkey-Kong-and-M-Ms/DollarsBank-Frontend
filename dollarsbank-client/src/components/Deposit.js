@@ -3,7 +3,7 @@ import React from 'react';
 class Deposit extends React.Component{
     constructor(props) {
         super(props);
-        this.stete =({depo: 0})
+        this.state =({depo: 0})
     }
 
     onChange = (e) => {
@@ -12,14 +12,16 @@ class Deposit extends React.Component{
 
     onSubmit = (e) => {
         e.preventDefault();
+        //post data through API Service
 
+        this.props.history.push('/home');
     }
 
     render() {
         return <div>
             <form onSubmit = {this.onSubmit}>
-               <input type = 'number' onChange = {this.onChange} value = {this.state.dep}>deposit amaount</input>
-               <submit>Submit</submit>
+               <input type = 'number' onChange = {this.onChange} value = {this.state.depo}></input>
+               <button type = 'submit'>submit</button>
             </form>
         </div>
     }

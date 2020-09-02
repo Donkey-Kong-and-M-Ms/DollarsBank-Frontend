@@ -4,6 +4,7 @@
   align-content: center;
   justify-content: center;
   flex-direction: column;
+  font-size: 40px;
 }
 
 form {
@@ -15,4 +16,12 @@ form {
 
 .block {
   height: 100px;
+}
+
+button {
+  font-size: 40px;
+}
+
+input {
+  font-size: 40px;
 }

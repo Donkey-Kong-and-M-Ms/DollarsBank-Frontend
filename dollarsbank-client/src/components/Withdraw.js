@@ -3,7 +3,7 @@ import React from 'react';
 class Withdraw extends React.Component{
     constructor(props) {
         super(props);
-        this.stete =({with: 0})
+        this.state =({with: 0})
     }
 
     onChange = (e) => {
@@ -12,14 +12,16 @@ class Withdraw extends React.Component{
 
     onSubmit = (e) => {
         e.preventDefault();
+        //post data through API Service
 
+        this.props.history.push('/home');
     }
 
     render() {
         return <div>
             <form onSubmit = {this.onSubmit}>
-               <input type = 'number' onChange = {this.onChange} value = {this.state.with}>Withdraw amaount</input>
-               <submit>Submit</submit>
+               <input type = 'number' onChange = {this.onChange} value = {this.state.with}></input>
+               <button type = 'submit'>submit</button>
             </form>
         </div>
     }

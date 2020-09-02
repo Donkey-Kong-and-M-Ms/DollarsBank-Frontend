@@ -8,6 +8,8 @@ import Deposit from './components/Deposit';
 import Transfer from './components/Transfer';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 
+
+//add a header and an image?
 function App() {
   return (
     <div className="App">
