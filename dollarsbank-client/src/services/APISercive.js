@@ -1,4 +1,7 @@
 import TokenService from './TokenService';
+import config from '../config';
+
+URL = config.BASE_URL;
 
 const APIService = {
 
@@ -11,7 +14,7 @@ const APIService = {
                 'password': password
             }
         };
-        return fetch ('URL HERE', postOptions)
+        return fetch (URL, postOptions)
         .then ( res => {
             //do something here
             //set user ID into token service
@@ -26,7 +29,7 @@ const APIService = {
                 'id': TokenService.getUserID()
             }
         };
-        return fetch ('URL HERE', postOptions)
+        return fetch (URL, postOptions)
         .then ( res => {
             //display error or success
         });
@@ -40,7 +43,7 @@ const APIService = {
                 'id': TokenService.getUserID()
             }
         };
-        return fetch ('URL HERE', postOptions)
+        return fetch (URL, postOptions)
         .then ( res => {
             //display error or success
         });
@@ -55,7 +58,7 @@ const APIService = {
                 'targetID': targetID
             }
         };
-        return fetch ('URL HERE', postOptions)
+        return fetch (URL, postOptions)
         .then ( res => {
             //display error or success
         });
@@ -70,7 +73,7 @@ const APIService = {
                 'amount': amount
             }
         };
-        return fetch ('URL HERE', postOptions)
+        return fetch (URL, postOptions)
         .then ( res => {
             //display error or success
         });
@@ -82,7 +85,7 @@ const APIService = {
             headers: {'Content-Type': 'application.json'},
             body: {}
         };
-        return fetch ('URL HERE', getOptions)
+        return fetch (URL, getOptions)
         .then ( res => {
             //extract data for rendering
         });
