@@ -1,7 +1,6 @@
 import TokenService from './TokenService';
-import config from '../config';
 
-URL = config.BASE_URL;
+URL = "http://localhost:8080";
 
 const APIService = {
 
@@ -10,11 +9,11 @@ const APIService = {
             method: 'POST',
             headers: {'Content-Type': 'application.json'},
             body: {
-                'username': username,
+                'userId': username,
                 'password': password
             }
         };
-        return fetch (URL, postOptions)
+        return fetch (URL + '/login/login', postOptions)
         .then ( res => {
             //do something here
             //set user ID into token service
@@ -63,19 +62,32 @@ const APIService = {
             //display error or success
         });
     },
-    postNewUser(username, password, amount){
+    postNewUser(first, last, contact, add, password){
         const postOptions = {
             method: 'POST',
-            headers: {'Content-Type': 'application.json'},
+            headers: {'Content-Type': 'application/json'},
             body: {
-                'username': username,
-                'password': password,
-                'amount': amount
+                "firstName": first,
+                "lastName": last,
+                "contactNum": contact,
+                "address": add,
+                "password": password
             }
         };
-        return fetch (URL, postOptions)
-        .then ( res => {
-            //display error or success
+        return fetch (URL + "/login/user/add", {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                "firstName": first,
+                "lastName": last,
+                "contactNum": contact,
+                "address": add,
+                "password": password
+            })
+        })
+        .then(res => res.text())
+        .then ( res =>  {
+            console.log(res);
         });
     },
     getRecent(id){

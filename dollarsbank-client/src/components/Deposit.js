@@ -1,4 +1,5 @@
 import React from 'react';
+import APIService from '../services/APISercive';
 
 class Deposit extends React.Component{
     constructor(props) {
@@ -12,6 +13,7 @@ class Deposit extends React.Component{
 
     onSubmit = (e) => {
         e.preventDefault();
+        APIService.postDeposit(this.state.depo);
         //post data through API Service
 
         this.props.history.push('/home');

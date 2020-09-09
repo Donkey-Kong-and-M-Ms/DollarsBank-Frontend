@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Withdraw from './components/Withdraw';
 import Deposit from './components/Deposit';
 import Transfer from './components/Transfer';
+import NewUser from './components/NewUser';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/withdraw' component={Withdraw} />
           <Route path='/home' component={Home} />
           <Route path='/login' component={Login} />
+          <Route path='/new' component={NewUser} />
           <Route path='/' component={Welcome} />
         </Switch>
       </BrowserRouter>
