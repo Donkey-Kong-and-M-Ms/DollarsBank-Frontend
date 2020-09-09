@@ -6,22 +6,30 @@
   flex-direction: column;
   font-size: 40px;
 }
-
+/*
 form {
   display: flex;
   flex-direction: column;
   margin: auto;
   max-width: 50%;
 }
-
+*/
 .block {
-  height: 100px;
+  padding:20px;
 }
 
 button {
   font-size: 40px;
+  padding:40px;
+  height:auto;
+  width:20%;
+  background-color: white;
 }
 
 input {
   font-size: 40px;
+}
+.headerpic {
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.4)));
+  /*mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));*/
 }
