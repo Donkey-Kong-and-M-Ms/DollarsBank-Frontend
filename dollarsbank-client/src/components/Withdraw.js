@@ -19,7 +19,10 @@ class Withdraw extends React.Component{
 
     render() {
         return <div>
-            <form onSubmit = {this.onSubmit}>
+            <div style={{padding:"20px", margin:"auto", textAlign:"center"}} >
+                <h1>How much would you like to withdraw?</h1>
+            </div>
+            <form onSubmit = {this.onSubmit} style={{marginLeft:"25%"}}>
                <input type = 'number' onChange = {this.onChange} value = {this.state.with}></input>
                <button type = 'submit'>submit</button>
             </form>

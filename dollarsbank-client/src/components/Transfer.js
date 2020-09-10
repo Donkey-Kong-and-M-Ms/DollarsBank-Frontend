@@ -18,7 +18,10 @@ class Transfer extends React.Component{
 
     render() {
         return <div>
-            <form onSubmit = {this.onSubmit}>
+            <div style={{padding:"20px", margin:"auto", textAlign:"center"}} >
+                <h1>How much would you like to transfer?</h1>
+            </div>
+            <form onSubmit = {this.onSubmit} style={{marginLeft:"12.5%"}}>
                <input type = 'number' onChange = {this.onChange} value = {this.state.amount} name = "amount"></input>
                <input type = 'number' onChange = {this.onChange} value = {this.state.target} name = "target"></input>
                <button type = 'submit'>submit</button>

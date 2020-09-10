@@ -8,8 +8,11 @@ class Welcome extends React.Component{
 
     render() {
         return <div>
-            <form>
-                <Link to = '/login'><button>Login</button></Link>
+            <div style={{padding:"20px", margin:"auto", textAlign:"center"}} >
+                <h1>Welcome to DK Bank!</h1>
+            </div>
+            <form style={{margin:"auto"}}>
+                <Link to = '/login'><button style={{marginLeft:"25%"}}>Login</button></Link>
                 <Link to = '/new'><button>New User</button></Link>
             </form>
         </div>
