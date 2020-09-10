@@ -1,5 +1,9 @@
 import React from 'react';
+
+import APIService from '../services/APISercive';
+
 import { noAuto } from '@fortawesome/fontawesome-svg-core';
+
 
 class Deposit extends React.Component{
     constructor(props) {
@@ -13,6 +17,7 @@ class Deposit extends React.Component{
 
     onSubmit = (e) => {
         e.preventDefault();
+        APIService.postDeposit(this.state.depo);
         //post data through API Service
 
         this.props.history.push('/home');

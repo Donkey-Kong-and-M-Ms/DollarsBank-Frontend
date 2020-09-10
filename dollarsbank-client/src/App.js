@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Withdraw from './components/Withdraw';
 import Deposit from './components/Deposit';
 import Transfer from './components/Transfer';
+import NewUser from './components/NewUser';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Logo2 from './components/Logo2.png'
 import FullBuilding from './components/fullbuilding.jpg'
@@ -34,6 +35,7 @@ function App() {
               <Route path='/withdraw' component={Withdraw} />
               <Route path='/home' component={Home} />
               <Route path='/login' component={Login} />
+              <Route path='/new' component={NewUser} />
               <Route path='/' component={Welcome} />
             </Switch>
           </BrowserRouter>
@@ -54,7 +56,6 @@ function App() {
         </div>
 
     </div>
-
 
     </div>
 
