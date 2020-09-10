@@ -28,14 +28,15 @@ class Login extends React.Component {
     }
 
     render() {
-        return <div>
-            <h3 className="error">{this.state.error}</h3>
-            <form onSubmit = {this.onSubmit}>
-                <label >User ID</label>
-                <input type='number' onChange = {this.onChange} value = {this.state.user} name = "user"></input>
-                <label >Password</label>
+        return <div >
+          <h3 className="error">{this.state.error}</h3>
+            <div style={{padding:"20px", margin:"auto", textAlign:"center"}} >
+                <h1>Please enter your username and password</h1>
+            </div>
+            <form style={{marginLeft:"25%"}}>
+                <input type='text' onChange = {this.onChange} value = {this.state.user} name = "user"></input><br/>
                 <input type='password' onChange = {this.onChange} value = {this.state.pass} name = "pass"></input>
-                <input type = 'submit'></input>
+                <button type = 'submit'>submit</button>{/* this used to be an input, not a button I just changed it, probably doesn't matter, but just letting you know  */}
             </form>
         </div>
     }

@@ -1,5 +1,9 @@
 import React from 'react';
+
 import APIService from '../services/APISercive';
+
+import { noAuto } from '@fortawesome/fontawesome-svg-core';
+
 
 class Deposit extends React.Component{
     constructor(props) {
@@ -20,8 +24,11 @@ class Deposit extends React.Component{
     }
 
     render() {
-        return <div>
-            <form onSubmit = {this.onSubmit}>
+        return <div style={{ backgroundColor:"",marginLeft:"auto", marginRight:"auto",  }}>
+            <div style={{padding:"20px", margin:"auto", textAlign:"center"}} >
+                <h1>How much would you like to deposit?</h1>
+            </div>
+            <form onSubmit = {this.onSubmit} style={{marginLeft:"25%"}}>
                <input type = 'number' onChange = {this.onChange} value = {this.state.depo}></input>
                <button type = 'submit'>submit</button>
             </form>
