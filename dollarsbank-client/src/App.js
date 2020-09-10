@@ -24,12 +24,12 @@ function App() {
   return (
     <div className="App">
       {/* Header  */}
-      <div style={{position:"relative", display:"flex", margin:0, padding:0, width:"80%", marginLeft:"auto", marginRight:"auto"}}>
-        <img src={Header2} style={{position:"relative", top:"0", left:"0", width:"100%",margin:0, padding:0}}/>
-        <img src={Logo2} style={{position:"absolute",left:"0",bottom:"0", marginLeft:"2%",marginBottom:"1%", borderRadius:"5px", padding:"0", width:"25%"}}/>
+      <div style={{ position: "relative", display: "flex", margin: 0, padding: 0, width: "80%", marginLeft: "auto", marginRight: "auto" }}>
+        <img src={Header2} style={{ position: "relative", top: "0", left: "0", width: "100%", margin: 0, padding: 0 }} />
+        <img src={Logo2} style={{ position: "absolute", left: "0", bottom: "0", marginLeft: "2%", marginBottom: "1%", padding: "0", width: "25%" }} />
 
       </div>
-{/*
+      {/*
         <div>
           <img src={Top} className="headerpic" style={{margin:"0", padding:"0", display:"block", position:"relative", top:"0", left:"0" }}/>
           <img src={Logo2} style={{position:"absolute",left:"0",bottom:"0", marginLeft:"10%",marginBottom:"10px", borderRadius:"5px"}}/>
@@ -42,18 +42,18 @@ function App() {
       mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));">
       
 */}
-    
-    {/*content */}
-      <div style={{ width: "80%", backgroundColor: "#8AA7CC" , marginLeft:"auto", marginRight:"auto", display:"flex"}}>
-        <div className="block" >
+
+      {/*content */}
+      <div style={{ width: "80%",  backgroundImage: "linear-gradient(#6C8AB5, #4E6C9D)", marginLeft: "auto", marginRight: "auto", display: "flex" }}>
+        <div style={{padding:"20px", marginLeft:"auto", marginright:"auto"}} >
           What would you like to do?
         </div>
-        <div style={{padding:"10px"}}>
-          <BrowserRouter>
+        <div style={{ padding: "10px" }}>
+          <BrowserRouter style={{}}>
             <Switch>
               <Route path='/transfer' component={Transfer} />
               <Route path='/deposit' component={Deposit} />
-              <Route path='/withdraw' component={Withdraw} /> 
+              <Route path='/withdraw' component={Withdraw} />
               <Route path='/home' component={Home} />
               <Route path='/login' component={Login} />
               <Route path='/' component={Welcome} />
@@ -71,22 +71,22 @@ lksjdlkdfj<br/>
         lksjdlkdfj<br/>
       </div>
 */}
-    {/*Footer*/}
-    <div style={{bottom:0 , position:"fixed",width:"80%", marginLeft:"10%", marginBottom:0, padding:0, display:"flex"}}>
-      <img src={Footer} style={{width:"100%", margin:0, padding:0}}/>
-      <div style={{position:"absolute",left:"0",top:"0", marginLeft:"5%",marginBottom:"1%", borderRadius:"5px", padding:"0", width:"25%"}}>
+      {/*Footer*/}
+      <div style={{ bottom: 0, position: "fixed", width: "80%", marginLeft: "10%", marginBottom: 0, padding: 0, display: "flex" }}>
+        <img src={Footer} style={{ width: "100%", margin: 0, padding: 0, borderTopLeftRadius:"5px",borderTopRightRadius:"5px",  }} />
+        <div style={{ position: "absolute", left: "0", top: "0", marginLeft: "5%", marginTop: "1%", borderRadius: "5px", padding: "0", width: "25%" }}>
 
-        <table style={{color:"white", fontSize:"0.5em"}}>
-          <tr> <a href= "https://github.com/Donkey-Kong-and-M-Ms"> GitHub</a></tr>
-          <tr>Front-End</tr>
-          <tr>test</tr>
-          <tr>Back-End</tr>
-          <tr>test</tr>
+          <table style={{ color: "white", fontSize: "0.3em" }}>
+            <tr><td><a href="https://github.com/Donkey-Kong-and-M-Ms" target="_blank">Team GitHub</a></td> </tr>
+            <tr><td>Front-End</td><td>Keith Prince</td><td><a href="https://github.com/SwordSageKeith" target="_blank">GitHub</a></td><td><a href="https://www.linkedin.com/in/keith-prince-429697a8/" target="_blank">LinkedIn</a></td></tr>
+            <tr><td></td><td>Makar T</td><td><a href="https://github.com/MakarTch" target="_blank">GitHub</a></td><td><a href="https://www.linkedin.com/in/makar-tchekalenkov/" target="_blank">LinkedIn</a></td></tr>
+            <tr><td>Back-End</td><td>Mark Rubio</td><td><a href="https://github.com/markrubio632" target="_blank">GitHub</a></td><td><a href="https://www.linkedin.com/in/markrubio632/" target="_blank">LinkedIn</a></td></tr>
+            <tr><td></td><td>Daniel Larrea</td><td><a href="https://github.com/DanielALarrea" target="_blank">GitHub</a></td><td><a href="https://www.linkedin.com/in/daniel-larrea/" target="_blank">LinkedIn</a></td></tr>
 
-        </table>
+          </table>
 
+        </div>
       </div>
-    </div>
 
 
 
@@ -96,7 +96,7 @@ lksjdlkdfj<br/>
 
 
 
-  
+
   );
 }
 

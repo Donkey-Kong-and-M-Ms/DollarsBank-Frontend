@@ -14,22 +14,48 @@ form {
   max-width: 50%;
 }
 */
+td{
+  text-align: left;
+  padding:3px;
+}
 .block {
-  padding:20px;
+  
 }
 
 button {
-  font-size: 40px;
+  font-size: 20px;
+  text-align:center;
   padding:40px;
+  margin:5px;
   height:auto;
   width:20%;
   background-color: white;
+  transition:0.3s;
 }
+button:hover{
+  background-color: rgb(237, 196, 196)
+;  
 
+}
 input {
   font-size: 40px;
 }
 .headerpic {
   -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.4)));
   /*mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));*/
+}
+a:link{
+	text-decoration:none;
+	color:white;
+}
+a:visited{
+	color:white;
+}
+a:hover{
+	text-decoration:none;
+	color:rgb(203, 214, 231);
+	
+}
+a:active{
+	color:rgb(0,0,0);
 }
