@@ -16,31 +16,31 @@ import { faBaby } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
-    <div style={{backgroundColor:"#F8FBFC"}}>
+    <div style={{ backgroundColor: "#F8FBFC" }}>
       {/* Header  */}
-      <div style={{ position: "relative", display: "flex", margin: 0, padding: 0, width: "80%",height:"100%", marginLeft: "auto", marginRight: "auto", boxShadow: "0px 0px 20px #aaaaaa" }}>
-        <img src={FullBuilding} style={{width:"100%"}}  />
+      <div style={{ position: "relative", display: "flex", margin: 0, padding: 0, width: "80%", height: "100%", marginLeft: "auto", marginRight: "auto", boxShadow: "0px 0px 20px #aaaaaa" }}>
+        <img src={FullBuilding} style={{ width: "100%" }} />
         <img src={Logo2} style={{ position: "absolute", left: "0", top: "20%", width: "25%" }} />
 
-      {/*content */}
-      <div style={{ width: "100%", height:"40%", top:"30%", backgroundImage: "linear-gradient(to bottom, rgba(255,0,0,0) , white 0.4%, white 99.6%, rgba(255,0,0,0))", position:"absolute", opacity:0.8 }}>
-        
-        
-        <div style={{ padding: "10px", }}>
-          <BrowserRouter style={{justifyContent: "center",alignItems: "center"}}>
-            <Switch>
-              <Route path='/transfer' component={Transfer} />
-              <Route path='/deposit' component={Deposit} />
-              <Route path='/withdraw' component={Withdraw} />
-              <Route path='/home' component={Home} />
-              <Route path='/login' component={Login} />
-              <Route path='/' component={Welcome} />
-            </Switch>
-          </BrowserRouter>
-        </div>
+        {/*content */}
+        <div style={{ width: "100%", height: "40%", top: "30%", backgroundImage: "linear-gradient(to bottom, rgba(255,0,0,0) , white 0.4%, white 99.6%, rgba(255,0,0,0))", position: "absolute", opacity: 0.8 }}>
 
-     </div>
-      {/*Footer*/}
+
+          <div style={{ padding: "10px", }}>
+            <BrowserRouter style={{ justifyContent: "center", alignItems: "center" }}>
+              <Switch>
+                <Route path='/transfer' component={Transfer} />
+                <Route path='/deposit' component={Deposit} />
+                <Route path='/withdraw' component={Withdraw} />
+                <Route path='/home' component={Home} />
+                <Route path='/login' component={Login} />
+                <Route path='/' component={Welcome} />
+              </Switch>
+            </BrowserRouter>
+          </div>
+
+        </div>
+        {/*Footer*/}
         <div style={{ position: "absolute", left: "0", bottom: "4%", marginLeft: "4%", padding: "0", width: "25%" }}>
 
           <table style={{ color: "white", fontSize: "0.7em" }}>
@@ -53,7 +53,7 @@ function App() {
           </table>
         </div>
 
-    </div>
+      </div>
 
 
     </div>
