@@ -1,9 +1,11 @@
 import React from 'react';
+import APIService from '../services/APISercive';
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = ({
+            error: "",
             user: "",
             pass: ""
         })
@@ -15,11 +17,19 @@ class Login extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        //post data through API Service
+        APIService.postLogin(this.state.user, this.state.pass)
+        .then (res => {
+            if (res){
+                this.state.history.push('');
+            } else {
+                this.setState({error: "Incorrect Username or Password"});
+            }
+        });
     }
 
     render() {
         return <div >
+          <h3 className="error">{this.state.error}</h3>
             <div style={{padding:"20px", margin:"auto", textAlign:"center"}} >
                 <h1>Please enter your username and password</h1>
             </div>

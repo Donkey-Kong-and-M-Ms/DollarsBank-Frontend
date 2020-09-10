@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Withdraw from './components/Withdraw';
 import Deposit from './components/Deposit';
 import Transfer from './components/Transfer';
+import NewUser from './components/NewUser';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Logo2 from './components/Logo2.png'
 import FullBuilding from './components/fullbuilding.jpg'
@@ -22,22 +23,23 @@ function App() {
         <img src={FullBuilding} style={{ width: "100%" }} />
         <img src={Logo2} style={{ position: "absolute", left: "0", top: "20%", width: "25%" }} />
 
-        {/*content */}
-        <div style={{ width: "100%", height: "40%", top: "30%", backgroundImage: "linear-gradient(to bottom, rgba(255,0,0,0) , white 0.4%, white 99.6%, rgba(255,0,0,0))", position: "absolute", opacity: 0.8 }}>
-
-
-          <div style={{ padding: "10px", }}>
-            <BrowserRouter style={{ justifyContent: "center", alignItems: "center" }}>
-              <Switch>
-                <Route path='/transfer' component={Transfer} />
-                <Route path='/deposit' component={Deposit} />
-                <Route path='/withdraw' component={Withdraw} />
-                <Route path='/home' component={Home} />
-                <Route path='/login' component={Login} />
-                <Route path='/' component={Welcome} />
-              </Switch>
-            </BrowserRouter>
-          </div>
+      {/*content */}
+      <div style={{ width: "100%", height:"40%", top:"30%", backgroundImage: "linear-gradient(to bottom, rgba(255,0,0,0) , white 0.4%, white 99.6%, rgba(255,0,0,0))", position:"absolute", opacity:0.8 }}>
+        
+        
+        <div style={{ padding: "10px", }}>
+          <BrowserRouter style={{justifyContent: "center",alignItems: "center"}}>
+            <Switch>
+              <Route path='/transfer' component={Transfer} />
+              <Route path='/deposit' component={Deposit} />
+              <Route path='/withdraw' component={Withdraw} />
+              <Route path='/home' component={Home} />
+              <Route path='/login' component={Login} />
+              <Route path='/new' component={NewUser} />
+              <Route path='/' component={Welcome} />
+            </Switch>
+          </BrowserRouter>
+        </div>
 
         </div>
         {/*Footer*/}
@@ -54,7 +56,6 @@ function App() {
         </div>
 
       </div>
-
 
     </div>
 
