@@ -1,5 +1,6 @@
 import React from 'react';
 import APIService from '../services/APISercive';
+import {Link} from 'react-router-dom';
 
 class NewUser extends React.Component {
     constructor(props) {
@@ -75,6 +76,7 @@ class NewUser extends React.Component {
 
                 <button type='submit' style={{width:"150px",height:"50px",padding:"10px",fontSize:"15px", float:"right", marginRight:"15%"}} >Create Account</button>
             </form>
+            <Link to="/"><button>Back</button></Link>
         </div>
     }
 }

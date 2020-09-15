@@ -2,6 +2,7 @@ import React from 'react';
 import APIService from '../services/APISercive';
 import {Link} from 'react-router-dom'
 
+
 class Transfer extends React.Component {
     constructor(props) {
         super(props);
@@ -50,6 +51,7 @@ class Transfer extends React.Component {
                 <button type='submit' style={{ width: "100%", marginTop:"10px" }}>Transfer</button>
             </form>
             <Link to ={'/home'}><button className="homeButton">Home</button></Link>
+
         </div>
     }
 }
