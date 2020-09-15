@@ -9,83 +9,104 @@ const APIService = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                'userId': username,
-                'password': password
             })
         };
-        return fetch(URL + '/login/login', postOptions)
+        return fetch(URL + '/login/login?userId=' + username + "&userPass=" + password, postOptions)
             .then(res => res.text())
             .then(res => {
-                if (res === "Login Success") {
-                    TokenService.saveUserID(username);
+                if(res === "mainPage"){
                     return true;
-                } else if (res === "Login Failed") {
-                    return false;
                 } else {
-                    alert("something went wrong");
+                    alert(res);
                     return false;
                 }
             });
     },
-    postDeposit(amount) {
+    postDeposit(amount, accountType) {
         const postOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                'amount': amount,
-                'id': TokenService.getUserID()
             })
         };
-        return fetch(URL, postOptions)
+        return fetch(URL + "/bank/deposit?amount=" + amount + "&accountType=" + accountType, postOptions)
+            .then(res => res.text())
             .then(res => {
-                //display error or success
+                alert(res);
+                return 1;
             });
     },
-    postWithdraw(amount) {
+    postWithdraw(amount, accountType) {
         const postOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                'amount': amount,
-                'id': TokenService.getUserID()
             })
         };
-        return fetch(URL, postOptions)
+        return fetch(URL + "/bank/deposit?withdraw=" + amount + "&accountType=" + accountType, postOptions)
+            .then(res => res.text())
             .then(res => {
-                //display error or success
+                alert(res);
+                return 1;
             });
     },
-    postTransfer(amount, targetID) {
+    postTransfer(amount, targetID, accountType, recAccountType) {
         const postOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                'amount': amount,
-                'id': TokenService.getUserID(),
-                'targetID': targetID
             })
         };
-        return fetch(URL, postOptions)
+        return fetch(URL + "/bank/fundTransfer?amount=" + amount + "&accountType=" + accountType + "&recAccountType=" + recAccountType + "&recieverId=" + targetID, postOptions)
+            .then(res => res.text())
             .then(res => {
-                //display error or success
+                alert(res);
+                return 1;
             });
     },
-    postNewUser(first, last, contact, add, password) {
+    postNewUser(first, last, contact, add, password, amount, accountType) {
         const postOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                "firstName": first,
-                "lastName": last,
-                "contactNum": contact,
-                "address": add,
-                "password": password
             })
         };
-        return fetch(URL + "/login/user/add", postOptions)
+        return fetch(URL + "/bank/register?firstName=" + first
+            + "&lastName=" + last
+            + "&contactNum=" + contact
+            + "&address=" + add
+            + "&password=" + password
+            + "&initialDeposit=" + amount
+            + "&accountType=" + accountType
+            , postOptions)
+            .then(res => res.text())
+            .then(res => {
+                alert(res);
+            });
+    },
+    postNewAccount(accountType, amount) {
+        const postOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+
+            })
+        };
+        return fetch(URL + "/bank/account/addNew?accountType=" + accountType + "&initialDeposit=" + amount, postOptions)
             .then(res => res.text());
     },
-    getRecent(id) {
+    getAccounts() {
+        const getOptions = {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            body: {}
+        };
+        return fetch(URL, getOptions)
+            .then(res => {
+                //extract data for rendering
+            });
+    },
+    getRecent(id) {         //****************** */
         //this one im less certain on that the post ones
         const getOptions = {
             method: 'GET',

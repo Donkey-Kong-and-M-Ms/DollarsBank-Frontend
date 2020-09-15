@@ -17,9 +17,12 @@ class Deposit extends React.Component{
 
     onSubmit = (e) => {
         e.preventDefault();
-        APIService.postDeposit(this.state.depo);
-        //post data through API Service
-
+        let accountType = "";
+        if (document.getElementById("savings").checked)
+            accountType= "Savings";
+        else
+            accountType= "Checkings"
+        APIService.postDeposit(this.state.depo, accountType);
         this.props.history.push('/home');
     }
 
@@ -29,7 +32,9 @@ class Deposit extends React.Component{
                 <h1>How much would you like to deposit?</h1>
             </div>
             <form onSubmit = {this.onSubmit} style={{marginLeft:"25%"}}>
-               <input type = 'number' onChange = {this.onChange} value = {this.state.depo}></input>
+               <input type = 'number' onChange = {this.onChange} value = {this.state.depo} required></input>
+               <input type="radio" id="savings" name="accountType" value="Savings" checked/>
+               <input type="radio" id="checking" name="accountType" value="Checking"/>
                <button type = 'submit'>submit</button>
             </form>
         </div>
