@@ -36,10 +36,10 @@ class Transfer extends React.Component {
             <form onSubmit={this.onSubmit} style={{ marginLeft: "12.5%" }}>
                 <input type='number' onChange={this.onChange} value={this.state.amount} name="amount"></input>
                 <input type='number' onChange={this.onChange} value={this.state.target} name="target"></input>
-                <input type="radio" id="savings" name="accountType" value="Savings" checked />
+                <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />
                 <input type="radio" id="checking" name="accountType" value="Checking" />
                 <p>Recipient account type</p>
-                <input type="radio" id="recsavings" name="recaccountType" value="Savings" checked />
+                <input type="radio" id="recsavings" name="recaccountType" value="Savings" defaultChecked />
                 <input type="radio" id="recchecking" name="recaccountType" value="Checking" />
                 <button type='submit'>submit</button>
             </form>

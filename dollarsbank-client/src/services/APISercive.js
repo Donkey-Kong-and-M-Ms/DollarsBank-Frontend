@@ -14,6 +14,7 @@ const APIService = {
         return fetch(URL + '/login/login?userId=' + username + "&userPass=" + password, postOptions)
             .then(res => res.text())
             .then(res => {
+                TokenService.saveUserID(username);
                 if(res === "mainPage"){
                     return true;
                 } else {
@@ -29,7 +30,7 @@ const APIService = {
             body: JSON.stringify({
             })
         };
-        return fetch(URL + "/bank/deposit?amount=" + amount + "&accountType=" + accountType, postOptions)
+        return fetch(URL + "/bank/deposit?amount=" + amount + "&accountType=" + accountType + "&userId=" + TokenService.getUserID(), postOptions)
             .then(res => res.text())
             .then(res => {
                 alert(res);
@@ -43,7 +44,7 @@ const APIService = {
             body: JSON.stringify({
             })
         };
-        return fetch(URL + "/bank/deposit?withdraw=" + amount + "&accountType=" + accountType, postOptions)
+        return fetch(URL + "/bank/withdraw?amount=" + amount + "&accountType=" + accountType + "&userId=" + TokenService.getUserID(), postOptions)
             .then(res => res.text())
             .then(res => {
                 alert(res);
@@ -57,7 +58,7 @@ const APIService = {
             body: JSON.stringify({
             })
         };
-        return fetch(URL + "/bank/fundTransfer?amount=" + amount + "&accountType=" + accountType + "&recAccountType=" + recAccountType + "&recieverId=" + targetID, postOptions)
+        return fetch(URL + "/bank/fundTransfer?amount=" + amount + "&accountType=" + accountType + "&recAccountType=" + recAccountType + "&recieverId=" + targetID + "&userId=" + TokenService.getUserID(), postOptions)
             .then(res => res.text())
             .then(res => {
                 alert(res);

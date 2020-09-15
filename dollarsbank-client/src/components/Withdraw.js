@@ -30,7 +30,7 @@ class Withdraw extends React.Component {
             </div>
             <form onSubmit={this.onSubmit} style={{ marginLeft: "25%" }}>
                 <input type='number' onChange={this.onChange} value={this.state.with}></input>
-                <input type="radio" id="savings" name="accountType" value="Savings" checked />
+                <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />
                 <input type="radio" id="checking" name="accountType" value="Checking" />
                 <button type='submit'>submit</button>
             </form>
