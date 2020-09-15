@@ -56,7 +56,7 @@ class NewUser extends React.Component {
                 <label >Address</label>
                 <input type='text' onChange={this.onChange} value={this.state.add} name="add" required />
                 <label >Account Type</label>
-                <p><input type="radio" id="savings" name="accountType" value="Savings" checked />Savings</p>
+                <p><input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />Savings</p>
 
                 <p><input type="radio" id="checking" name="accountType" value="Checking" />Checking</p>
 
