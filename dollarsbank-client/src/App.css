@@ -7,6 +7,13 @@
   font-size: 40px;
 }
 */
+html{
+  height:100%
+}
+body{
+  height:100%
+}
+
 form {
   margin-left: auto;
   margin-right:auto;
@@ -24,9 +31,10 @@ td{
 button {
   font-size: 30px;
   text-align:center;
-  padding:30px;
+  padding:20px;
   margin:5px;
   width:25%;
+  height:70px;
   /*background-color: white;*/
   transition:0.3s;
   cursor: pointer;
@@ -39,16 +47,19 @@ button:hover{
 
 }
 input {
-  margin:5px;
+  margin:10px;
   border: 1px solid black;
   padding: 10px;
-  font-size: 30px;
+  font-size: 25px;
   border-radius: 5px;
 }
-
-input[type=text],input[type=number],input[type=password]{
-  
+input[type=text], input[type=password], input[type=number]{
+  width:20%
 }
+
+input:focus{
+  border: 1px solid rgb(0,153,77);
+} 
 
 button[type=submit]{
   padding:10px;
@@ -71,4 +82,14 @@ a:hover{
 }
 a:active{
 	color:rgb(0,0,0);
+}
+
+.homeButton{
+position:absolute;
+right:10px;
+bottom:10px;
+width:150px;
+height:50px;
+padding:10px;
+font-size:15px
 }

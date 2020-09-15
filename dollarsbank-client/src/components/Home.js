@@ -25,15 +25,15 @@ class Home extends React.Component{
 
     render() {
         return <div>
-            <div style={{padding:"20px", margin:"auto", textAlign:"center"}} >
+            <div style={{ margin:"auto", textAlign:"center"}} >
                 <h1>What would you like to do?</h1>
             </div>
             <form >
-                <Link to = '/deposit'><button style={{marginLeft:"12%", }}>Deposit&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowRight}/> <FontAwesomeIcon icon={faLandmark}/> </button></Link>
-                <Link to = '/withdraw'><button>Withdraw&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowLeft}/> <FontAwesomeIcon icon={faLandmark}/></button></Link>
-                <Link to = '/transfer'><button>Transfer&nbsp;<FontAwesomeIcon icon={faArchive}/> <FontAwesomeIcon icon={faExchangeAlt}/> <FontAwesomeIcon icon={faArchive}/></button></Link>
-                <Link to = '/activity'><button style={{marginLeft:"25%"}}>Activity&nbsp;<FontAwesomeIcon icon={faClipboardList}/></button></Link>
-                <Link to = '/'><button onClick={this.logout}>Logout&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link>
+                <Link to = '/deposit'><button style={{marginLeft:"12%",height:"90px" }}>Deposit&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowRight}/> <FontAwesomeIcon icon={faLandmark}/> </button></Link>
+                <Link to = '/withdraw'><button style={{height:"90px"}}>Withdraw&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowLeft}/> <FontAwesomeIcon icon={faLandmark}/></button></Link>
+                <Link to = '/transfer'><button style={{height:"90px"}}>Transfer&nbsp;<FontAwesomeIcon icon={faArchive}/> <FontAwesomeIcon icon={faExchangeAlt}/> <FontAwesomeIcon icon={faArchive}/></button></Link>
+                <Link to = '/activity'><button style={{marginLeft:"25%", height:"90px" }}>Activity&nbsp;<FontAwesomeIcon icon={faClipboardList}/></button></Link>
+                <Link to = '/'><button style={{height:"90px"}} onClick={this.logout}>Logout&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link>
             </form>
           
         </div>

@@ -34,9 +34,11 @@ class Login extends React.Component {
                 <h1>Please enter your username and password</h1>
             </div>
             <form style={{marginLeft:"25%"}} onSubmit = {this.onSubmit}>
-                <input type='text' onChange = {this.onChange} value = {this.state.user} name = "user"></input><br/>
+                <label>Username</label>
+                <input type='text' onChange = {this.onChange} value = {this.state.user} name = "user"></input>
+                <label>Password</label>
                 <input type='password' onChange = {this.onChange} value = {this.state.pass} name = "pass"></input>
-                <button type = 'submit'>submit</button>{/* this used to be an input, not a button I just changed it, probably doesn't matter, but just letting you know  */}
+                <button type='submit' style={{width:"150px",height:"50px",padding:"10px",fontSize:"15px", margin:"15px"}} >Log in</button>
             </form>
         </div>
     }

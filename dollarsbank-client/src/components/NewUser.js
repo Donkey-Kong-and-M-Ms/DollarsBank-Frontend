@@ -42,27 +42,38 @@ class NewUser extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div style={{marginLeft:"30px"}}>
             <h3 className="error">{this.state.error}</h3>
-            <form onSubmit={this.onSubmit}>
-                <label >First Name</label>
+            <h1>Please enter your information:</h1>
+            <form onSubmit={this.onSubmit} >
+                
+                <label >First Name: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type='text' onChange={this.onChange} value={this.state.first} name="first" required />
-                <label >Last Name</label>
+
+                <label >Last Name: </label>
                 <input type='text' onChange={this.onChange} value={this.state.last} name="last" required />
-                <label >Contact Number</label>
-                <input type='text' onChange={this.onChange} value={this.state.contact} name="contact" required />
-                <label >Password</label>
+
+                <label >Contact Number: </label>
+                <input type='text' onChange={this.onChange} value={this.state.contact} name="contact" required /><br/>
+
+                <label >Password: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type='password' onChange={this.onChange} value={this.state.pass} name="pass" required />
-                <label >Address</label>
-                <input type='text' onChange={this.onChange} value={this.state.add} name="add" required />
-                <label >Account Type</label>
-                <p><input type="radio" id="savings" name="accountType" value="Savings" checked />Savings</p>
 
-                <p><input type="radio" id="checking" name="accountType" value="Checking" />Checking</p>
+                <label >Address: </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type='text' onChange={this.onChange} value={this.state.add} name="add" required />&nbsp;&nbsp;
 
-                <label >Initial Deposit</label>
+                <label >Account Type: </label>
+                <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />
+                <label for="savings">Savings Accounts</label>&nbsp;
+                <input type="radio" id="checking" name="accountType" value="Checking" />
+                <label for="checking">Checking Account</label><br/>
+
+
+                
+                <label >Initial Deposit: </label>
                 <input type='text' onChange={this.onChange} value={this.state.depo} name="depo" required />
-                <input type='submit'></input>
+
+                <button type='submit' style={{width:"150px",height:"50px",padding:"10px",fontSize:"15px", float:"right", marginRight:"15%"}} >Create Account</button>
             </form>
         </div>
     }

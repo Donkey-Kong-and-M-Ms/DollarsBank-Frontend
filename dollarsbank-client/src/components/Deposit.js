@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom'
 import APIService from '../services/APISercive';
 
 import { noAuto } from '@fortawesome/fontawesome-svg-core';
@@ -28,16 +28,19 @@ class Deposit extends React.Component{
     }
 
     render() {
-        return <div style={{ backgroundColor:"",marginLeft:"auto", marginRight:"auto",  }}>
-            <div style={{padding:"20px", margin:"auto", textAlign:"center"}} >
-                <h1>How much would you like to deposit?</h1>
+        return <div style={{ marginLeft:"auto", marginRight:"auto",  }}>
+            <div style={{ margin:"auto", textAlign:"center"}} >
+                <h1>Please enter deposit information:</h1>
             </div>
-            <form onSubmit = {this.onSubmit} style={{marginLeft:"25%"}}>
-               <input type = 'number' onChange = {this.onChange} value = {this.state.depo} required></input>
-               <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked/>
-               <input type="radio" id="checking" name="accountType" value="Checking"/>
-               <button type = 'submit'>submit</button>
+            <form onSubmit={this.onSubmit} style={{ marginLeft: "25%", width: "50%",  }}>
+                <input type='number' onChange={this.onChange} value={this.state.depo} required></input>
+                <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />
+                <label for="savings">Savings Accounts</label>&nbsp;
+                <input type="radio" id="checking" name="accountType" value="Checking" />
+                <label for="checking">Checking Account</label>
+                <button type='submit' style={{ width: "100%" }}>Deposit</button>
             </form>
+            <Link to ={'/home'}><button className="homeButton">Home</button></Link>
         </div>
     }
 }
