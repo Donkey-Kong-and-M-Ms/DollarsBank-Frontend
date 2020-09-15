@@ -1,5 +1,6 @@
 import React from 'react';
 import APIService from '../services/APISercive';
+import {Link} from 'react-router-dom';
 
 class NewUser extends React.Component {
     constructor(props) {
@@ -64,6 +65,7 @@ class NewUser extends React.Component {
                 <input type='text' onChange={this.onChange} value={this.state.depo} name="depo" required />
                 <input type='submit'></input>
             </form>
+            <Link to="/"><button>Back</button></Link>
         </div>
     }
 }

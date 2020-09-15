@@ -7,6 +7,8 @@ import Withdraw from './components/Withdraw';
 import Deposit from './components/Deposit';
 import Transfer from './components/Transfer';
 import NewUser from './components/NewUser';
+import History from './components/History';
+import NewAccount from './components/NewAccount';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Logo2 from './components/Logo2.png'
 import FullBuilding from './components/fullbuilding.jpg'
@@ -36,6 +38,8 @@ function App() {
               <Route path='/home' component={Home} />
               <Route path='/login' component={Login} />
               <Route path='/new' component={NewUser} />
+              <Route path='/activity' component={History} />
+              <Route path='/newaccount' component={NewAccount} />
               <Route path='/' component={Welcome} />
             </Switch>
           </BrowserRouter>

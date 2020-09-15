@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import APIService from '../services/APISercive';
 
@@ -34,10 +35,11 @@ class Deposit extends React.Component{
             </div>
             <form onSubmit = {this.onSubmit} style={{marginLeft:"25%"}}>
                <input type = 'number' onChange = {this.onChange} value = {this.state.depo} required></input>
-               <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked/>
-               <input type="radio" id="checking" name="accountType" value="Checking"/>
+               <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked/> Savings
+               <input type="radio" id="checking" name="accountType" value="Checking"/> Checking
                <button type = 'submit'>submit</button>
             </form>
+            <Link to="/home"><button>Back</button></Link>
         </div>
     }
 }

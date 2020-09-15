@@ -1,5 +1,6 @@
 import React from 'react';
 import APIService from '../services/APISercive';
+import {Link} from 'react-router-dom';
 
 class Withdraw extends React.Component {
     constructor(props) {
@@ -30,10 +31,11 @@ class Withdraw extends React.Component {
             </div>
             <form onSubmit={this.onSubmit} style={{ marginLeft: "25%" }}>
                 <input type='number' onChange={this.onChange} value={this.state.with}></input>
-                <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />
-                <input type="radio" id="checking" name="accountType" value="Checking" />
+                <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked /> Savings
+                <input type="radio" id="checking" name="accountType" value="Checking" /> Checking
                 <button type='submit'>submit</button>
             </form>
+            <Link to="/home"><button>Back</button></Link>
         </div>
     }
 }

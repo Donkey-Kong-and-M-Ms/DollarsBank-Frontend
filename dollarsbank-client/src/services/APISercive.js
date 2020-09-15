@@ -58,7 +58,7 @@ const APIService = {
             body: JSON.stringify({
             })
         };
-        return fetch(URL + "/bank/fundTransfer?amount=" + amount + "&accountType=" + accountType + "&recAccountType=" + recAccountType + "&recieverId=" + targetID + "&userId=" + TokenService.getUserID(), postOptions)
+        return fetch(URL + "/bank/fundTransfer?amount=" + amount + "&userAccountType=" + accountType + "&recAccountType=" + recAccountType + "&receiverId=" + targetID + "&userId=" + TokenService.getUserID(), postOptions)
             .then(res => res.text())
             .then(res => {
                 alert(res);
@@ -89,11 +89,9 @@ const APIService = {
         const postOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-
-            })
+            body: JSON.stringify({})
         };
-        return fetch(URL + "/bank/account/addNew?accountType=" + accountType + "&initialDeposit=" + amount, postOptions)
+        return fetch(URL + "/bank/account/addNew?accountType=" + accountType + "&initialDeposit=" + amount + "&userId=" + TokenService.getUserID(), postOptions)
             .then(res => res.text());
     },
     getAccounts() {
@@ -107,17 +105,13 @@ const APIService = {
                 //extract data for rendering
             });
     },
-    getRecent(id) {         //****************** */
-        //this one im less certain on that the post ones
+    getRecent() {
         const getOptions = {
             method: 'GET',
-            headers: { 'Content-Type': 'application/json' },
-            body: {}
+            headers: { 'Content-Type': 'application/json' }
         };
-        return fetch(URL, getOptions)
-            .then(res => {
-                //extract data for rendering
-            });
+        return fetch(URL + "/bank/transactions?userid=" + TokenService.getUserID(), getOptions)
+            .then(res => res.json());
     }
 }
 

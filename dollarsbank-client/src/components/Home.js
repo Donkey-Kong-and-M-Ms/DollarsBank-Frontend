@@ -33,6 +33,7 @@ class Home extends React.Component{
                 <Link to = '/withdraw'><button>Withdraw&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowLeft}/> <FontAwesomeIcon icon={faLandmark}/></button></Link>
                 <Link to = '/transfer'><button>Transfer&nbsp;<FontAwesomeIcon icon={faArchive}/> <FontAwesomeIcon icon={faExchangeAlt}/> <FontAwesomeIcon icon={faArchive}/></button></Link>
                 <Link to = '/activity'><button style={{marginLeft:"25%"}}>Activity&nbsp;<FontAwesomeIcon icon={faClipboardList}/></button></Link>
+                <Link to = '/newaccount'><button >New Account&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link>
                 <Link to = '/'><button onClick={this.logout}>Logout&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link>
             </form>
           

@@ -1,39 +1,33 @@
 import React from 'react';
 import APIService from '../services/APISercive';
+import {Link} from 'react-router-dom';
 
 class History extends React.Component {
     constructor(props) {
         super(props);
-        this.state = ({ with: 0 })
+        this.state = {his: [], xml: ""}        
     }
-
-    onChange = (e) => {
-        this.setState({ with: e.target.value });
+    componentDidMount(){
+        APIService.getRecent()
+        .then(res => {
+            this.setState({ his:  res});
+            this.generateTable();
+        });
     }
-
-    onSubmit = (e) => {
-        e.preventDefault();
-        let accountType = "";
-        if (document.getElementById("savings").checked)
-            accountType = "Savings";
-        else
-            accountType = "Checkings"
-        APIService.postWithdraw(this.state.with, accountType);
-
-        this.props.history.push('/home');
+ 
+    generateTable = () => {
+        return this.state.his.map(test => {
+            return (<tr>
+                <td>Transaction ID: {test.transactionId}      |  </td>
+                <td>{test.description}</td>
+            </tr>)
+        })
     }
 
     render() {
         return <div>
-            <div style={{ padding: "20px", margin: "auto", textAlign: "center" }} >
-                <h1>How much would you like to withdraw?</h1>
-            </div>
-            <form onSubmit={this.onSubmit} style={{ marginLeft: "25%" }}>
-                <input type='number' onChange={this.onChange} value={this.state.with}></input>
-                <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />
-                <input type="radio" id="checking" name="accountType" value="Checking" />
-                <button type='submit'>submit</button>
-            </form>
+            <table>{this.generateTable()}</table>
+            <Link to="/home"><button>Back</button></Link>
         </div>
     }
 }

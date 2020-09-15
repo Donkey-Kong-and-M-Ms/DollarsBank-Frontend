@@ -1,5 +1,6 @@
 import React from 'react';
 import APIService from '../services/APISercive';
+import {Link} from 'react-router-dom';
 
 class Transfer extends React.Component {
     constructor(props) {
@@ -39,10 +40,11 @@ class Transfer extends React.Component {
                 <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />
                 <input type="radio" id="checking" name="accountType" value="Checking" />
                 <p>Recipient account type</p>
-                <input type="radio" id="recsavings" name="recaccountType" value="Savings" defaultChecked />
-                <input type="radio" id="recchecking" name="recaccountType" value="Checking" />
+                <input type="radio" id="recsavings" name="recaccountType" value="Savings" defaultChecked /> Savings
+                <input type="radio" id="recchecking" name="recaccountType" value="Checking" /> Checking
                 <button type='submit'>submit</button>
             </form>
+            <Link to="/home"><button>Back</button></Link>
         </div>
     }
 }
