@@ -31,6 +31,7 @@ class History extends React.Component {
             </div>
             <table className="history" style={{marginLeft:"27%"}}><tr className="history"><th className="history">Transaction ID</th><th className="history">Transaction Description</th></tr>{this.generateTable()}</table>
             <Link to="/home"><button className="homeButton">Back</button></Link>
+
         </div>
     }
 }

@@ -55,6 +55,7 @@ input {
   padding: 10px;
   font-size: 25px;
   border-radius: 5px;
+  transition:0.3s;
 }
 input[type=text], input[type=password], input[type=number]{
   width:20%
@@ -62,6 +63,7 @@ input[type=text], input[type=password], input[type=number]{
 
 input:focus{
   border: 1px solid rgb(0,153,77);
+  background-color: rgb(201, 217, 232);
 } 
 
 button[type=submit]{

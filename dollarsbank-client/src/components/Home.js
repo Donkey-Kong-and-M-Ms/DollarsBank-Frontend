@@ -38,6 +38,7 @@ class Home extends React.Component{
                 <Link to = '/newaccount'><button style={{height:"90px"}}>New Account&nbsp;<FontAwesomeIcon icon={faPlus}/></button></Link>
                 <Link to = '/'><button className="homeButton" onClick={this.logout}>Logout&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link>
 
+
             </form>
         </div>
     }

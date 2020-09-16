@@ -37,6 +37,7 @@ class Login extends React.Component {
             </div>
             <form style={{marginLeft:"25%"}} onSubmit = {this.onSubmit}>
                 <label>User ID: </label>
+
                 <input type='text' onChange = {this.onChange} value = {this.state.user} name = "user"></input>
                 <label>Password: </label>
                 <input type='password' onChange = {this.onChange} value = {this.state.pass} name = "pass"></input>

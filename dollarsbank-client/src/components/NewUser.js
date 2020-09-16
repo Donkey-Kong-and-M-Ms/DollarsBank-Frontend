@@ -77,6 +77,7 @@ class NewUser extends React.Component {
                 <button type='submit' style={{width:"765px",height:"50px",padding:"10px", margin:"10px",fontSize:"15px", float:"right", marginRight:"10%"}} >Create Account</button>
             </form>
             <Link to="/"><button className="homeButton">Back</button></Link>
+
         </div>
     }
 }
