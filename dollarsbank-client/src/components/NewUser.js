@@ -48,7 +48,7 @@ class NewUser extends React.Component {
             <h1>Please enter your information:</h1>
             <form onSubmit={this.onSubmit} >
                 
-                <label >First Name: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label >First Name: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type='text' onChange={this.onChange} value={this.state.first} name="first" required />
 
                 <label >Last Name: </label>
@@ -57,10 +57,10 @@ class NewUser extends React.Component {
                 <label >Contact Number: </label>
                 <input type='text' onChange={this.onChange} value={this.state.contact} name="contact" required /><br/>
 
-                <label >Password: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label >Password: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type='password' onChange={this.onChange} value={this.state.pass} name="pass" required />
 
-                <label >Address: </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <label >Address: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type='text' onChange={this.onChange} value={this.state.add} name="add" required />&nbsp;&nbsp;
 
                 <label >Account Type: </label>
@@ -74,9 +74,9 @@ class NewUser extends React.Component {
                 <label >Initial Deposit: </label>
                 <input type='text' onChange={this.onChange} value={this.state.depo} name="depo" required />
 
-                <button type='submit' style={{width:"150px",height:"50px",padding:"10px",fontSize:"15px", float:"right", marginRight:"15%"}} >Create Account</button>
+                <button type='submit' style={{width:"765px",height:"50px",padding:"10px", margin:"10px",fontSize:"15px", float:"right", marginRight:"10%"}} >Create Account</button>
             </form>
-            <Link to="/"><button>Back</button></Link>
+            <Link to="/"><button className="homeButton">Back</button></Link>
         </div>
     }
 }

@@ -17,17 +17,20 @@ class History extends React.Component {
  
     generateTable = () => {
         return this.state.his.map(test => {
-            return (<tr>
-                <td>Transaction ID: {test.transactionId}      |  </td>
-                <td>{test.description}</td>
+            return (<tr className="history">
+                <td className="history">{test.transactionId}</td>
+                <td className="history">{test.description}</td>
             </tr>)
         })
     }
 
     render() {
         return <div>
-            <table>{this.generateTable()}</table>
-            <Link to="/home"><button>Back</button></Link>
+            <div style={{ margin: "auto", textAlign: "center" }} >
+                <h1>5 most recent transactions:</h1>
+            </div>
+            <table className="history" style={{marginLeft:"27%"}}><tr className="history"><th className="history">Transaction ID</th><th className="history">Transaction Description</th></tr>{this.generateTable()}</table>
+            <Link to="/home"><button className="homeButton">Back</button></Link>
         </div>
     }
 }
