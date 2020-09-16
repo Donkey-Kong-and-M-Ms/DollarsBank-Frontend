@@ -40,7 +40,7 @@ class NewAccount extends React.Component {
                 <input type='text' onChange={this.onChange} value={this.state.depo} name="depo" required />
                 <input type='submit'></input>
             </form>
-            <Link to="/"><button>Back</button></Link>
+            <Link to ={'/home'}><button className="homeButton">Home</button></Link>
         </div>
     }
 }

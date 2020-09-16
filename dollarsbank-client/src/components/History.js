@@ -27,7 +27,7 @@ class History extends React.Component {
     render() {
         return <div>
             <table>{this.generateTable()}</table>
-            <Link to="/home"><button>Back</button></Link>
+            <Link to ={'/home'}><button className="homeButton">Home</button></Link>
         </div>
     }
 }
