@@ -11,9 +11,12 @@ html{
   height:100%
 }
 body{
-  height:100%
+  height:100%;
+  font-size:16px;
 }
-
+label{
+  font-size: 20px;
+}
 form {
   margin-left: auto;
   margin-right:auto;
@@ -95,3 +98,30 @@ height:50px;
 padding:10px;
 font-size:15px
 }
+
+table .history{ 
+	margin:auto;
+	margin-top:10px;
+	margin-top:10px;
+	/*width:70%;*/
+	outline:4px ridge var(--lighter-main-color);/*            */
+  border-collapse:collapse;	
+  font-size:20px;
+}
+tr .history{
+	border-bottom: 1px solid rgb(200,200,200);
+}
+tr:last-child .history{
+ 	border-bottom: 0;
+}
+th,td .history{
+	font-size:0.9em;
+	padding:5px 5px;
+	text-align:left;
+	margin:0;
+}
+th .history{
+	border-bottom: 1px solid rgb(150,150,150);	
+	
+}
+
