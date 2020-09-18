@@ -35,20 +35,24 @@ class Transfer extends React.Component {
             <div style={{ margin: "auto", textAlign: "center" }} >
                 <h1>Please enter transfer information:</h1>
             </div>
-            <form onSubmit={this.onSubmit} style={{ marginLeft: "25%",width:"50%" }}>
+            <form onSubmit={this.onSubmit} className="transferForm">
+                <div style={{float:"left"}}>
                 <label for="amount">Transfer amount:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type='number' onChange={this.onChange} value={this.state.amount} name="amount"></input><br/>
                 <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />
                 <label for="savings">Savings Accounts</label>&nbsp;
                 <input type="radio" id="checking" name="accountType" value="Checking" />
                 <label for="checking">Checking Account</label><br/>
+                </div>
+                <div style={{float:"left"}}>
                 <label for="target">User Id to transfer to:</label>
                 <input type='number' onChange={this.onChange} value={this.state.target} name="target"></input><br/>
                 <input type="radio" id="recsavings" name="recaccountType" value="Savings" defaultChecked />
                 <label for="recsavings">Savings Accounts</label>&nbsp;
                 <input type="radio" id="recchecking" name="recaccountType" value="Checking" />
                 <label for="recchecking">Checking Account</label>
-                <button type='submit' style={{ width: "100%", marginTop:"10px" }}>Transfer</button>
+                </div>
+                <button type='submit' className="transferButton">Transfer</button>
             </form>
             <Link to ={'/home'}><button className="homeButton">Home</button></Link>
 

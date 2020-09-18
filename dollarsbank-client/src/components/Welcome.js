@@ -10,6 +10,7 @@ class Welcome extends React.Component{
         return <div>
             <div style={{padding:"20px", margin:"auto", textAlign:"center"}} >
                 <h1>Welcome to DK Bank!</h1>
+                <h3>If you would like to skip the account creation process you may log in with User Id: 5 and Password: Password*13</h3>
             </div>
             <form style={{margin:"auto"}}>
                 <Link to = '/login'><button style={{marginLeft:"25%"}}>Login</button></Link>

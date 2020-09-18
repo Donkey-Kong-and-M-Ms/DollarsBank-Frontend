@@ -7,9 +7,12 @@
   font-size: 40px;
 }
 */
+
 html{
   height:100%
 }
+
+
 body{
   height:100%;
   font-size:16px;
@@ -99,12 +102,46 @@ padding:10px;
 font-size:15px
 }
 
+.homeDiv{ 
+  width: 100%; 
+  height:400px; 
+  top:30%; 
+  background-image: linear-gradient(to bottom, rgba(255,0,0,0) , white 0.4%, white 99.6%, rgba(255,0,0,0)); 
+  position:absolute; 
+  opacity:0.85 
+}
+
+.menuButton{
+  height:90px;
+}
+.transferButton{
+  width: 100%; 
+  margin-top:10px
+}
+.transferForm{
+    margin-left: 25%;
+    width:50% 
+  }
+.createButton{
+  width:50%;
+  height:50px;
+  padding:10px;
+  margin:10px;
+  font-size:15px;
+  float:right;
+  margin-right:12%
+}
+.logButton{
+  width:150px;
+  height:50px;
+  padding:10px;
+  font-size:20px;
+  margin:15px 
+}
 table .history{ 
 	margin:auto;
 	margin-top:10px;
 	margin-top:10px;
-	/*width:70%;*/
-	outline:4px ridge var(--lighter-main-color);/*            */
   border-collapse:collapse;	
   font-size:20px;
 }
@@ -118,10 +155,72 @@ th,td .history{
 	font-size:0.9em;
 	padding:5px 5px;
 	text-align:left;
-	margin:0;
 }
-th .history{
-	border-bottom: 1px solid rgb(150,150,150);	
-	
+@media screen and (max-width: 1550px) {
+
+  button {
+    font-size: 1.2vw;
+    text-align:center;
+    padding:10px;
+    margin:5px;
+    width:25%;
+    height:40px;
+    /*background-color: white;*/
+    transition:0.3s;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  .homeDiv{
+    height:275px;
+  }
+
+  body{
+    font-size: 1vw;
+  }
+  .menuButton{
+    height:60px
+  }
+  .homeButton{
+    width:80px;
+    height:35px;
+    padding:5px;
+    font-size:12px
+  }
+  .transferForm{
+    margin-left: 20%;
+    width:75%;
+    margin-top:0
+  }
+  .transferButton{
+    width:75%;
+  }
+  .logButton{
+    width:150px;
+    height:40px;
+    font-size:1vw;
+    margin:15px 
 }
 
+  .createButton{
+    width:50%;
+    height:40px;
+    margin:10px;
+    font-size:1vw;
+    float:right;
+    margin-right:12%
+  }
+
+  input{
+    font-size:1vw;
+  }
+  label{
+    font-size:1vw;
+  }
+  td.history{
+    font-size:1vw;
+  }
+  th.history{
+    font-size:1vw;
+  }
+}

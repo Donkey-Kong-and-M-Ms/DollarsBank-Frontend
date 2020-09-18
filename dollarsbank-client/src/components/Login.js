@@ -41,7 +41,7 @@ class Login extends React.Component {
                 <input type='text' onChange = {this.onChange} value = {this.state.user} name = "user"></input>
                 <label>Password: </label>
                 <input type='password' onChange = {this.onChange} value = {this.state.pass} name = "pass"></input>
-                <button type='submit' style={{width:"150px",height:"50px",padding:"10px",fontSize:"15px", margin:"15px"}} >Log in</button>
+                <button type='submit' className="logButton">Log in</button>
             </form>
             <Link to ={'/'}><button className="homeButton">Back</button></Link>
 

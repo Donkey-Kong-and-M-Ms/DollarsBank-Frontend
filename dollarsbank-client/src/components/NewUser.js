@@ -1,9 +1,11 @@
 import React from 'react';
 import APIService from '../services/APISercive';
 import {Link} from 'react-router-dom';
+import axios from 'axios'
 
 class NewUser extends React.Component {
     constructor(props) {
+
         super(props);
         this.state = ({
             error: "",
@@ -12,8 +14,22 @@ class NewUser extends React.Component {
             contact: "",
             add: "",
             pass: "",
-            depo: ""
+            depo: "",
+            userId:0
         })
+    }
+
+    componentDidMount(){
+        this.findUserId()
+    }
+
+    findUserId(){
+        axios.get("http://localhost:8080/bank/newUserId")
+            .then(response => response.data)
+            .then((data) => {
+                this.setState({userId:data})
+                console.log(this.state.userId)
+            })
     }
 
     onChange = (e) => {
@@ -45,7 +61,9 @@ class NewUser extends React.Component {
     render() {
         return <div style={{marginLeft:"30px"}}>
             <h3 className="error">{this.state.error}</h3>
-            <h1>Please enter your information:</h1>
+            <h1 style={{display:"inline"}}>Please enter your information:</h1>
+            <h3 style={{display:"inline", marginLeft:"10%", color:"#003E7E"}}>Upon account creation, your User Id will be {this.state.userId}</h3>
+
             <form onSubmit={this.onSubmit} >
                 
                 <label >First Name: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -55,26 +73,24 @@ class NewUser extends React.Component {
                 <input type='text' onChange={this.onChange} value={this.state.last} name="last" required />
 
                 <label >Contact Number: </label>
-                <input type='text' onChange={this.onChange} value={this.state.contact} name="contact" required /><br/>
+                <input type='text' onChange={this.onChange} value={this.state.contact} name="contact" placeholder="(xxx)xxx-xxx" required /><br/>
 
                 <label >Password: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type='password' onChange={this.onChange} value={this.state.pass} name="pass" required />
 
                 <label >Address: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type='text' onChange={this.onChange} value={this.state.add} name="add" required />&nbsp;&nbsp;
+                <input type='text' onChange={this.onChange} value={this.state.add} name="add" required />
 
-                <label >Account Type: </label>
+                <label >Account Type:</label>
                 <input type="radio" id="savings" name="accountType" value="Savings" defaultChecked />
-                <label for="savings">Savings Accounts</label>&nbsp;
-                <input type="radio" id="checking" name="accountType" value="Checking" />
+                <label for="savings">Savings Account</label>
+                <input type="radio" id="checking" name="accountType" value="Checking"/>
                 <label for="checking">Checking Account</label><br/>
 
-
-                
                 <label >Initial Deposit: </label>
                 <input type='text' onChange={this.onChange} value={this.state.depo} name="depo" required />
 
-                <button type='submit' style={{width:"765px",height:"50px",padding:"10px", margin:"10px",fontSize:"15px", float:"right", marginRight:"10%"}} >Create Account</button>
+                <button type='submit' className="createButton" >Create Account</button>
             </form>
             <Link to="/"><button className="homeButton">Back</button></Link>
 
