@@ -10,6 +10,7 @@ import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import { faLandmark } from "@fortawesome/free-solid-svg-icons";
 import { faArchive } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import TokenService from '../services/TokenService';
 
 
@@ -34,9 +35,10 @@ class Home extends React.Component{
                 <Link to = '/deposit'><button style={{marginLeft:"12%",height:"90px" }}>Deposit&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowRight}/> <FontAwesomeIcon icon={faLandmark}/> </button></Link>
                 <Link to = '/withdraw'><button style={{height:"90px"}}>Withdraw&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowLeft}/> <FontAwesomeIcon icon={faLandmark}/></button></Link>
                 <Link to = '/transfer'><button style={{height:"90px"}}>Transfer&nbsp;<FontAwesomeIcon icon={faArchive}/> <FontAwesomeIcon icon={faExchangeAlt}/> <FontAwesomeIcon icon={faArchive}/></button></Link>
-                <Link to = '/activity'><button style={{marginLeft:"25%", height:"90px" }}>Activity&nbsp;<FontAwesomeIcon icon={faClipboardList}/></button></Link>
+                <Link to = '/userInfo'><button style={{marginLeft:"12%",  height:"90px"}}>User Info&nbsp;<FontAwesomeIcon icon={faUsers}/></button></Link>
+                <Link to = '/activity'><button style={{height:"90px" }}>Activity&nbsp;<FontAwesomeIcon icon={faClipboardList}/></button></Link>
                 <Link to = '/newaccount'><button style={{height:"90px"}}>New Account&nbsp;<FontAwesomeIcon icon={faPlus}/></button></Link>
-                <Link to = '/'><button className="homeButton" onClick={this.logout}>Logout&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link>
+                <Link to = '/'><button className="homeButton" onClick={this.logout}>Logout&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link><Link to = '/'><button className="homeButton" onClick={this.logout}>Logout&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link>
 
             </form>
         </div>

@@ -1,9 +1,11 @@
 import React from 'react';
 import APIService from '../services/APISercive';
 import {Link} from 'react-router-dom';
+import axios from 'axios'
 
 class NewUser extends React.Component {
     constructor(props) {
+
         super(props);
         this.state = ({
             error: "",
@@ -12,8 +14,22 @@ class NewUser extends React.Component {
             contact: "",
             add: "",
             pass: "",
-            depo: ""
+            depo: "",
+            userId:0
         })
+    }
+
+    componentDidMount(){
+        this.findUserId()
+    }
+
+    findUserId(){
+        axios.get("http://localhost:8080/bank/newUserId")
+            .then(response => response.data)
+            .then((data) => {
+                this.setState({userId:data})
+                console.log(this.state.userId)
+            })
     }
 
     onChange = (e) => {
@@ -55,7 +71,7 @@ class NewUser extends React.Component {
                 <input type='text' onChange={this.onChange} value={this.state.last} name="last" required />
 
                 <label >Contact Number: </label>
-                <input type='text' onChange={this.onChange} value={this.state.contact} name="contact" required /><br/>
+                <input type='text' onChange={this.onChange} value={this.state.contact} name="contact" placeholder="(xxx)xxx-xxx" required /><br/>
 
                 <label >Password: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type='password' onChange={this.onChange} value={this.state.pass} name="pass" required />
@@ -69,13 +85,12 @@ class NewUser extends React.Component {
                 <input type="radio" id="checking" name="accountType" value="Checking" />
                 <label for="checking">Checking Account</label><br/>
 
-
-                
                 <label >Initial Deposit: </label>
                 <input type='text' onChange={this.onChange} value={this.state.depo} name="depo" required />
 
                 <button type='submit' style={{width:"765px",height:"50px",padding:"10px", margin:"10px",fontSize:"15px", float:"right", marginRight:"10%"}} >Create Account</button>
             </form>
+            <h3 style={{marginLeft:"50%", color:"blue"}}>Upon account creation, your User Id will be {this.state.userId}</h3>
             <Link to="/"><button className="homeButton">Back</button></Link>
         </div>
     }

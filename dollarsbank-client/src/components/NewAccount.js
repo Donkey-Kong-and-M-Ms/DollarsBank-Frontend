@@ -36,12 +36,10 @@ class NewAccount extends React.Component {
             <form onSubmit={this.onSubmit} style={{ marginLeft: "25%", width: "50%",  }}>
                 <label >Initial Deposit: </label>
                 <input type='text' onChange={this.onChange} value={this.state.depo} name="depo" required />
-
                 <input type="radio" id="savings" name="accountType" value="Savings" style={{marginLeft:"10%"}}defaultChecked />
                 <label for="savings">Savings Account</label>&nbsp;
                 <input type="radio" id="checking" name="accountType" value="Checking" />
                 <label for="checking">Checking Account</label>
-
                 <button type='submit' style={{ width: "100%" }}>Create Account</button>
             </form>
             <Link to="/home"><button className="homeButton">Back</button></Link>

@@ -101,8 +101,6 @@ table .history{
 	margin:auto;
 	margin-top:10px;
 	margin-top:10px;
-	/*width:70%;*/
-	outline:4px ridge var(--lighter-main-color);/*            */
   border-collapse:collapse;	
   font-size:20px;
 }
@@ -116,10 +114,4 @@ th,td .history{
 	font-size:0.9em;
 	padding:5px 5px;
 	text-align:left;
-	margin:0;
 }
-th .history{
-	border-bottom: 1px solid rgb(150,150,150);	
-	
-}
-

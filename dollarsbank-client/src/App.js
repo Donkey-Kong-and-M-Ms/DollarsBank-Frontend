@@ -12,7 +12,7 @@ import NewAccount from './components/NewAccount';
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Logo2 from './components/Logo2.png'
 import FullBuilding from './components/fullbuilding.jpg'
-import { faBaby } from "@fortawesome/free-solid-svg-icons";
+import UserInfo from './components/UserInfo'
 
 function App() {
   return (
@@ -20,9 +20,7 @@ function App() {
       {/* Header  */}
       <div style={{ position: "relative", display: "flex", margin: 0, padding: 0, width: "80%", height: "100%", marginLeft: "auto", marginRight: "auto", boxShadow: "0px 0px 20px #aaaaaa" }}>
         <img src={FullBuilding} style={{ width: "100%" }} />
-        <a href='/home'>
           <img src={Logo2} style={{ position: "absolute", left: "0", top: "20%", width: "25%" }} />
-        </a>
 
       {/*content */}
       <div style={{ width: "100%", height:"400px", top:"30%", backgroundImage: "linear-gradient(to bottom, rgba(255,0,0,0) , white 0.4%, white 99.6%, rgba(255,0,0,0))", position:"absolute", opacity:0.85 }}>
@@ -39,6 +37,7 @@ function App() {
               <Route path='/new' component={NewUser} />
               <Route path='/activity' component={History} />
               <Route path='/newaccount' component={NewAccount} />
+              <Route path='/userInfo' component={UserInfo} />
               <Route path='/' component={Welcome} />
             </Switch>
           </BrowserRouter>
