@@ -23,7 +23,7 @@ function App() {
           <img src={Logo2} style={{ position: "absolute", left: "0", top: "20%", width: "25%" }} />
 
       {/*content */}
-      <div style={{ width: "100%", height:"400px", top:"30%", backgroundImage: "linear-gradient(to bottom, rgba(255,0,0,0) , white 0.4%, white 99.6%, rgba(255,0,0,0))", position:"absolute", opacity:0.85 }}>
+      <div className = "homeDiv" >
         
         
         <div style={{ padding: "10px", height:"100%" }}>

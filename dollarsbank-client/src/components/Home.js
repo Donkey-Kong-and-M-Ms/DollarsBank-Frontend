@@ -32,12 +32,12 @@ class Home extends React.Component{
             </div>
             <form >
 
-                <Link to = '/deposit'><button style={{marginLeft:"12%",height:"90px" }}>Deposit&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowRight}/> <FontAwesomeIcon icon={faLandmark}/> </button></Link>
-                <Link to = '/withdraw'><button style={{height:"90px"}}>Withdraw&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowLeft}/> <FontAwesomeIcon icon={faLandmark}/></button></Link>
-                <Link to = '/transfer'><button style={{height:"90px"}}>Transfer&nbsp;<FontAwesomeIcon icon={faArchive}/> <FontAwesomeIcon icon={faExchangeAlt}/> <FontAwesomeIcon icon={faArchive}/></button></Link>
-                <Link to = '/userInfo'><button style={{marginLeft:"12%",  height:"90px"}}>User Info&nbsp;<FontAwesomeIcon icon={faUsers}/></button></Link>
-                <Link to = '/activity'><button style={{height:"90px" }}>Activity&nbsp;<FontAwesomeIcon icon={faClipboardList}/></button></Link>
-                <Link to = '/newaccount'><button style={{height:"90px"}}>New Account&nbsp;<FontAwesomeIcon icon={faPlus}/></button></Link>
+                <Link to = '/deposit'><button className="menuButton" style={{marginLeft:"12%"}}>Deposit&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowRight}/> <FontAwesomeIcon icon={faLandmark}/> </button></Link>
+                <Link to = '/withdraw'><button className="menuButton" >Withdraw&nbsp; <FontAwesomeIcon icon={faDollarSign}/> <FontAwesomeIcon icon={faArrowLeft}/> <FontAwesomeIcon icon={faLandmark}/></button></Link>
+                <Link to = '/transfer'><button className="menuButton">Transfer&nbsp;<FontAwesomeIcon icon={faArchive}/> <FontAwesomeIcon icon={faExchangeAlt}/> <FontAwesomeIcon icon={faArchive}/></button></Link>
+                <Link to = '/userInfo'><button className="menuButton" style={{marginLeft:"12%"}}>User Info&nbsp;<FontAwesomeIcon icon={faUsers}/></button></Link>
+                <Link to = '/activity'><button className="menuButton">Activity&nbsp;<FontAwesomeIcon icon={faClipboardList}/></button></Link>
+                <Link to = '/newaccount'><button className="menuButton">New Account&nbsp;<FontAwesomeIcon icon={faPlus}/></button></Link>
                 <Link to = '/'><button className="homeButton" onClick={this.logout}>Logout&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link><Link to = '/'><button className="homeButton" onClick={this.logout}>Logout&nbsp;<FontAwesomeIcon icon={faUndo}/></button></Link>
 
             </form>
