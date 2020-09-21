@@ -61,7 +61,7 @@ class NewUser extends React.Component {
     render() {
         return <div style={{marginLeft:"30px"}}>
             <h3 className="error">{this.state.error}</h3>
-            <h1 style={{display:"inline"}}>Please enter your information:</h1>
+            <h1 style={{display:"inline", paddingBottom:"40px"}}>Please enter your information:</h1>
             <h3 style={{display:"inline", marginLeft:"10%", color:"#003E7E"}}>Upon account creation, your User Id will be {this.state.userId}</h3>
 
             <form onSubmit={this.onSubmit} >
